@@ -15,20 +15,20 @@ Plugin 'kien/ctrlp.vim'
 
 "html
 "  isnowfy only compatible with python not python3
-Plugin 'isnowfy/python-vim-instant-markdown'
-Plugin 'jtratner/vim-flavored-markdown'
-Plugin 'suan/vim-instant-markdown'
-Plugin 'nelstrom/vim-markdown-preview'
+"Plugin 'isnowfy/python-vim-instant-markdown'
+"Plugin 'jtratner/vim-flavored-markdown'
+"Plugin 'suan/vim-instant-markdown'
+"Plugin 'nelstrom/vim-markdown-preview'
 "python sytax checker
 Plugin 'nvie/vim-flake8'
-Plugin 'vim-scripts/Pydiction'
+"Plugin 'vim-scripts/Pydiction'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'scrooloose/syntastic'
 
 "auto-completion stuff
-"Plugin 'klen/python-mode'
+Plugin 'klen/python-mode'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'klen/rope-vim'
+"Plugin 'klen/rope-vim'
 "Plugin 'davidhalter/jedi-vim'
 Plugin 'ervandew/supertab'
 ""code folding
@@ -51,8 +51,8 @@ let mapleader=" "
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 "
 call togglebg#map("<F5>")
-"colorscheme zenburn
-"set guifont=Monaco:h14
+colorscheme zenburn
+set guifont=Monaco:h14
 
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
@@ -63,16 +63,17 @@ set noswapfile
 set nu
 
 "python with virtualenv support
-py << EOF
-import os.path
-import sys
-import vim
-if 'VIRTUA_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  sys.path.insert(0, project_base_dir)
-  activate_this = os.path.join(project_base_dir,'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
+"
+"/usr/bin/py << EOF
+"import os.path
+"import sys
+"import vim
+"if 'VIRTUA_ENV' in os.environ:
+"  project_base_dir = os.environ['VIRTUAL_ENV']
+"  sys.path.insert(0, project_base_dir)
+"  activate_this = os.path.join(project_base_dir,'bin/activate_this.py')
+"  execfile(activate_this, dict(__file__=activate_this))
+"EOF
 
 "it would be nice to set tag files by the active virtualenv here
 ":set tags=~/mytags "tags for ctags and taglist
@@ -115,6 +116,8 @@ autocmd FileType python set autoindent
 " make backspaces more powerfull
 set backspace=indent,eol,start
 
+" Map :NERDTreeTabsToggle command to some combo so you don't have to type it
+map <Leader>n <plug>NERDTreeTabsToggle<CR>
 
 "Folding based on indentation:
 autocmd FileType python set foldmethod=indent
@@ -123,4 +126,4 @@ nnoremap <space> za
 "----------Stop python PEP 8 stuff--------------
 
 "js stuff"
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+"autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
