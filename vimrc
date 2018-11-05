@@ -38,6 +38,9 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'jnurmine/Zenburn'
 
+"Install plugin for robotframework-vim
+Plugin 'seeamkhan/robotframework-vim'
+
 call vundle#end()
 
 filetype plugin indent on    " enables filetype detection
