@@ -11,7 +11,7 @@ Plugin 'tpope/vim-fugitive'
 "filesystem
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'kien/ctrlp.vim' 
+Plugin 'ctrlpvim/ctrlp.vim' 
 
 "html
 "  isnowfy only compatible with python not python3
