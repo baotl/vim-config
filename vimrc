@@ -130,3 +130,7 @@ nnoremap <space> za
 
 "js stuff"
 "autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+
+" jj shortcut for Esp
+imap jj <Esc>
+
