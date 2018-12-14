@@ -5,7 +5,7 @@ function is_pacakge_installed {
 	l_package_name=$1
 	
 	dpkg -s $l_package_name &>/dev/null
-	if [ ! $? ]; then
+	if [ $? ]; then
 		echo "$l_package_name not installed; do it now"
 		sudo apt install $l_package_name
 	else
@@ -17,6 +17,7 @@ if [ ! -d $vundle_dir ]; then
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
 cp ./vimrc ~/.vim/vimrc
+mv ~/.vimrc ~/.vimrc.org
 ln ~/.vim/vimrc ~/.vimrc 
 vim +PluginInstall +qall
 
